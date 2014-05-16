@@ -43,8 +43,9 @@
 	</repositories>
 
 	<properties>
-		<spring.framework.version>3.1.1.RELEASE</spring.framework.version>
+		<spring.framework.version>3.2.8.RELEASE</spring.framework.version>
 	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -91,15 +92,29 @@
 		</dependency>
 
 		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${spring.framework.version}</version>
+		</dependency>
+
+		<dependency>
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-commons-core</artifactId>
-			<version>1.1.0.RELEASE</version>
+			<version>1.4.1.RELEASE</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-redis</artifactId>
-			<version>1.0.0.RELEASE</version>
+			<version>1.2.1.RELEASE</version>
+		</dependency>
+
+		<dependency>
+			<groupId>redis.clients</groupId>
+			<artifactId>jedis</artifactId>
+			<version>2.4.2</version>
+			<type>jar</type>
+			<scope>compile</scope>
 		</dependency>
 
 	</dependencies>
