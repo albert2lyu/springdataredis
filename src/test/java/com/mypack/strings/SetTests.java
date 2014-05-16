@@ -9,13 +9,13 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations="classpath:applicationContext-redis1.xml")
-public class GetTests {
+public class SetTests {
 	
 	@Resource
-	private GetService getService;
+	private SetService setService;
 	
 	@Test
 	public void getTest(){
-		getService.get();
+		setService.setValue("name", "cz");
 	}
 }
