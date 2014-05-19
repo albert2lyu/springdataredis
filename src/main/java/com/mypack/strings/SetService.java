@@ -16,5 +16,9 @@ public class SetService {
 	public void setValue(String key,String value){
 		stringRedisTemplate.opsForValue().set(key, value);
 		System.out.println("set key:" + key + " value:" + value);
+		
+		stringRedisTemplate.opsForValue().set("1", "number1");
+		stringRedisTemplate.opsForValue().set("2", "number2");
+
 	}
 }

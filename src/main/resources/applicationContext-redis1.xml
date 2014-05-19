@@ -12,20 +12,20 @@
 
 	<bean id="connectionFactory" name="redisConnectionFactory"
 		class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"
-		p:host-name="192.168.227.128" p:usePool="true"/>
+		p:host-name="192.168.227.128" p:usePool="true" />
 
 	<bean id="stringRedisTemplate" class="org.springframework.data.redis.core.StringRedisTemplate"
 		p:connection-factory-ref="connectionFactory" />
 
-     
-     
-    <!--  
-	<bean id="dataJedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
-		<property name="maxTotal" value="300" />
-		<property name="maxIdle" value="100" />
-		<property name="minIdle" value="20" />
-		<property name="testOnBorrow" value="true" />
-	</bean>
-    -->
+
+	<bean id="rt" class="org.springframework.data.redis.core.RedisTemplate"
+		p:connection-factory-ref="connectionFactory" />
+
+
+
+	<!-- <bean id="dataJedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig"> 
+		<property name="maxTotal" value="300" /> <property name="maxIdle" value="100" 
+		/> <property name="minIdle" value="20" /> <property name="testOnBorrow" value="true" 
+		/> </bean> -->
 
 </beans>
