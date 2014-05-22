@@ -1,6 +1,5 @@
 package com.mypack.hashes;
 
-import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -16,7 +15,7 @@ public class UserService {
 	
 	
 	@Resource(name="redisTemplate")
-	private RedisTemplate<String, Serializable>  redisTemplate;
+	private RedisTemplate<String, String>  redisTemplate;
 	
 	
 	public void saveUser(){
@@ -26,11 +25,15 @@ public class UserService {
 	
 			HashOperations<String,String,String> userHo = redisTemplate.opsForHash();
 			userHo.putAll("user:111111", usrMap);
+			
 		
 	}
 	
 	
 	public void getUser(){
-	
+		HashOperations<String,String,String> userHo = redisTemplate.opsForHash();
+		Map<String,String> userMap = userHo.entries("user:111111");
+		System.out.println(userMap.get("name")+"######"+userMap.get("age"));
+
 	}
 }

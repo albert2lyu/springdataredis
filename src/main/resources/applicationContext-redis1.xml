@@ -21,7 +21,6 @@
 	<bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate"
 		p:connection-factory-ref="connectionFactory" p:hashKeySerializer-ref="srs"  p:hashValueSerializer-ref="srs" p:valueSerializer-ref="srs" p:keySerializer-ref="srs"/>
 
-
     <bean id="srs" class="org.springframework.data.redis.serializer.StringRedisSerializer" />  
   
 
