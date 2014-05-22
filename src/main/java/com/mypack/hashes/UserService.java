@@ -18,22 +18,20 @@ public class UserService {
 	private RedisTemplate<String, String>  redisTemplate;
 	
 	
-	public void saveUser(){
+	public void setUser(){
 			Map<String,String> usrMap = new  HashMap<String,String>();
 	        usrMap.put("name","cz");
 	        usrMap.put("age","12");
-	
+
 			HashOperations<String,String,String> userHo = redisTemplate.opsForHash();
 			userHo.putAll("user:111111", usrMap);
 			
-		
+			System.out.println("set [user:111111 name:cz age:12]  ok");
+			
+			Map<String,String> userMap = userHo.entries("user:111111");
+			System.out.println("get [user:111111 ] :" + "name:"+userMap.get("name") + " age:"+userMap.get("age"));
 	}
 	
 	
-	public void getUser(){
-		HashOperations<String,String,String> userHo = redisTemplate.opsForHash();
-		Map<String,String> userMap = userHo.entries("user:111111");
-		System.out.println(userMap.get("name")+"######"+userMap.get("age"));
 
-	}
 }

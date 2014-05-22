@@ -10,19 +10,16 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations="classpath:applicationContext-redis1.xml")
-public class UserServiceTest {
+public class HDelServiceTests {
 	
 	@Resource
-	private UserService userService;
+	private HDelService hDelService;
+	
 	
 	@Test
 	public void test(){
-		userService.saveUser();
+		hDelService.del();
 	}
 	
-	@Test
-	public void test1(){
-		userService.getUser();
-	}
 
 }
