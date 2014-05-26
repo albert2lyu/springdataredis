@@ -1,4 +1,4 @@
-package com.mypack.hashes;
+package com.mypack.lists;
 
 import javax.annotation.Resource;
 
